@@ -18,14 +18,20 @@
   - `go list -f '{{.Target}}'`
 - Install
   - `go install` - installs executable in the install path which, if in OS Path, will allow direct execution from anywhere
+- Initialize workspace with module
+  - `go work init ./hello`
+- Add module to workspace
+  - `go work use ./example`
+  - go.work can be used instead of adding replace directives to work across multiple modules.
 
 ### References
 
- - [Standard Library](https://pkg.go.dev/std)
- - [Authenticating (verifying) Modules](https://go.dev/ref/mod#authenticating`)
+- [Standard Library](https://pkg.go.dev/std)
+- [Authenticating (verifying) Modules](https://go.dev/ref/mod#authenticating`)
 - [Exported Names](https://go.dev/tour/basics/3)
 - [Multiple return values](https://go.dev/doc/effective_go#multiple-returns)
 - [init Function](https://go.dev/doc/effective_go#init)
 - [Go maps in action](https://go.dev/blog/maps)
 - [Blank identifier](https://go.dev/doc/effective_go#blank)
-- 
+- [Workspaces](https://go.dev/ref/mod#workspaces)
+
