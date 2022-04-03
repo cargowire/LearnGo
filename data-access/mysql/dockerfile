@@ -1,0 +1,7 @@
+FROM mysql/mysql-server:latest
+
+RUN echo "bind-address=0.0.0.0" >> /etc/my.cnf
+
+COPY ./sql-scripts/ /docker-entrypoint-initdb.d/
+
+EXPOSE 3306

@@ -2,27 +2,20 @@
 
 ## Running MySQL in docker
 
-Assumed to be run in Git Bash on windows
+Assumed to be run in Git Bash on windows inside `/data-access/mysql`
 
 ```
-$ docker pull mysql/mysql-server:latest
-$ docker run -v /$(pwd):/data-access/ --name=mysql1 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql/mysql-server:8.0
-```
-
-```
-$ docker exec -it mysql1 mysql -uroot -p
+$ docker compose up -d
 ```
 
 ```
-mysql> create database recordings;
-mysql> use recordings;
-mysql> source /data-access/create-tables.sql
+$ docker exec -it go-mysql bash
 ```
 
 ```
-$ docker stop mysql1
+$ docker stop go-mysql
 ```
 
 ```
-$ docker rm mysql1
+$ docker rm go-mysql
 ```
